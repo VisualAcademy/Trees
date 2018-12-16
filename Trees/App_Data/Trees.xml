@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Trees>
+  <Tree>
+    <TreeId>1</TreeId>
+    <TreeOrder>1</TreeOrder>
+    <ParentId>0</ParentId>
+    <TreeName>책(XML)</TreeName>
+    <TreePath>/Home/Book</TreePath>
+  </Tree>
+  <Tree>
+    <TreeId>2</TreeId>
+    <TreeOrder>2</TreeOrder>
+    <ParentId>0</ParentId>
+    <TreeName>강의(XML)</TreeName>
+    <TreePath>/Home/Lectue</TreePath>
+  </Tree>
+  <Tree>
+    <TreeId>3</TreeId>
+    <TreeOrder>3</TreeOrder>
+    <ParentId>1</ParentId>
+    <TreeName>좋은책(XML)</TreeName>
+    <TreePath>/Home/Lectue</TreePath>
+  </Tree>
+  <Tree>
+    <TreeId>4</TreeId>
+    <TreeOrder>4</TreeOrder>
+    <ParentId>1</ParentId>
+    <TreeName>나쁜책(XML)</TreeName>
+    <TreePath>/Home/Lectue</TreePath>
+  </Tree>
+  <Tree>
+    <TreeId>5</TreeId>
+    <TreeOrder>1</TreeOrder>
+    <ParentId>3</ParentId>
+    <TreeName>C#을 다루는 기술(XML)</TreeName>
+    <TreePath>/Home/Lectue</TreePath>
+  </Tree>
+  <Tree>
+    <TreeId>6</TreeId>
+    <TreeOrder>2</TreeOrder>
+    <ParentId>3</ParentId>
+    <TreeName>ASP.NET을 다루는 기술(XML)</TreeName>
+    <TreePath>/Home/Lectue</TreePath>
+  </Tree>
+</Trees>
