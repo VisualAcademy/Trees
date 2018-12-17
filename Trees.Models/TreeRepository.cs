@@ -62,18 +62,18 @@ namespace Trees.Models
         {
             List<Tree> trees = new List<Tree>();
 
-            string sql = " Select * From Trees Where 1 == 1 ";
+            string sql = " Select * From Trees Where 1 = 1 ";
 
             // 특정 Community에 해당하는 트리 메뉴만 읽어오기 
             if (communityId != 0)
             {
-                sql += " And ComminityId = " + communityId.ToString() + " ";
+                sql += " And CommunityId = " + communityId.ToString() + " ";
             }
 
             // IsVisible 속성이 참(1)인 트리 메뉴만 읽어오기 
             if (isVisible)
             {
-                sql = " And IsVisible = 1 ";
+                sql += " And IsVisible = 1 ";
             }
 
             sql += " Order By TreeOrder Asc, TreeId Asc "; 
@@ -82,19 +82,19 @@ namespace Trees.Models
 
             trees = db.Query<Tree>(sql).ToList();
 
-            return GetTreeData(trees, 0, communityId);
+            return GetTreeData(trees, 0);
         }
 
         /// <summary>
         /// 트리 메뉴 데이터를 트리 구조로 읽어오기 
         /// </summary>
-        private List<Tree> GetTreeData(List<Tree> trees, int parentId, int communityId = 0)
+        private List<Tree> GetTreeData(List<Tree> trees, int parentId)
         {
             List<Tree> lstTrees = new List<Tree>();
 
             var q =
                 from m in trees
-                where m.ParentId == parentId && m.CommunityId == communityId 
+                where m.ParentId == parentId 
                 orderby m.TreeOrder
                 select new Tree
                 {
@@ -109,7 +109,7 @@ namespace Trees.Models
                     Target = m.Target,
                     BoardAlias = m.BoardAlias,
                     Trees = (m.TreeId != parentId)
-                        ? GetTreeData(trees, m.TreeId, m.CommunityId) : new List<Tree>()
+                        ? GetTreeData(trees, m.TreeId) : new List<Tree>()
                 };
 
             lstTrees = q.ToList();

@@ -271,6 +271,9 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
     <Content Include="TreeManager.aspx" />
+    <Content Include="Trees\TreeManager.aspx" />
+    <Content Include="Trees\TreeManagerUserControl.ascx" />
+    <Content Include="Trees\TreeSidebarUserControl.ascx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -442,6 +445,27 @@
     </Compile>
     <Compile Include="TreeManager.aspx.designer.cs">
       <DependentUpon>TreeManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Trees\TreeManager.aspx.cs">
+      <DependentUpon>TreeManager.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Trees\TreeManager.aspx.designer.cs">
+      <DependentUpon>TreeManager.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Trees\TreeManagerUserControl.ascx.cs">
+      <DependentUpon>TreeManagerUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Trees\TreeManagerUserControl.ascx.designer.cs">
+      <DependentUpon>TreeManagerUserControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Trees\TreeSidebarUserControl.ascx.cs">
+      <DependentUpon>TreeSidebarUserControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Trees\TreeSidebarUserControl.ascx.designer.cs">
+      <DependentUpon>TreeSidebarUserControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
