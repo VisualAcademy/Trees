@@ -36,5 +36,10 @@ namespace Trees.Models
         /// 트리 순서 변경
         /// </summary>
         int UpdateTreeOrder(int parentId = 0, int communityId = 0);
+
+        /// <summary>
+        /// 트리 관리자 페이지에서 전체 트리 리스트 출력
+        /// </summary>
+        List<Tree> GetAll(int communityId = 0, bool isVisible = true);
     }
 }

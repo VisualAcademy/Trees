@@ -86,6 +86,30 @@ namespace Trees.Models
         }
 
         /// <summary>
+        /// 트리 관리자 페이지에서 전체 트리 리스트 출력
+        /// </summary>
+        public List<Tree> GetAll(int communityId = 0, bool isVisible = true)
+        {
+            List<Tree> trees = new List<Tree>();
+
+            string sql = " Select * From Trees Where 1 = 1 ";
+
+            // 특정 Community에 해당하는 트리 메뉴만 읽어오기 
+            if (communityId != 0)
+            {
+                sql += " And CommunityId = " + communityId.ToString() + " ";
+            }
+
+            sql += " Order By TreeOrder Asc, TreeId Asc ";
+
+            SqlConnection db = new SqlConnection(_connectionString);
+
+            trees = db.Query<Tree>(sql).ToList();
+
+            return trees;
+        }
+               
+        /// <summary>
         /// 트리 메뉴 데이터를 트리 구조로 읽어오기 
         /// </summary>
         private List<Tree> GetTreeData(List<Tree> trees, int parentId)
